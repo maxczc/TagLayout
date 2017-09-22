@@ -1,0 +1,6 @@
+<resources>
+  <string name="app_name">TagLayout</string>
+  <string name="gravity_left">left</string>
+  <string name="gravity_right">right</string>
+  <string name="gravity_center_horizontal">center horizontal</string>
+</resources>
