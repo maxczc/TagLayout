@@ -3,6 +3,7 @@
 a simple flowable tag layout
 
 效果如下:
+
 ![image](./images/image.png)
 
 ###支持三种对齐方式
