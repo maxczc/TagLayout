@@ -60,4 +60,6 @@ public class CustomTagView extends LinearLayout implements ITag<User> {
 }
 ```
 
+如发现问题请不吝赐教 谢谢~
+----
 
