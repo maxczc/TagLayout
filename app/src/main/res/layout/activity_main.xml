@@ -1,65 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".MainActivity"
     >
+
 
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      android:gravity="center"
+      android:orientation="vertical"
       >
-    <Button
-        android:id="@+id/leftBt"
-        android:layout_width="0dp"
+    <com.czc.max.taglayout.TagLayout
+        android:id="@+id/tagLayout1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        style="?android:attr/buttonBarButtonStyle"
-        android:text="@string/gravity_left"
+        android:background="@color/colorAccent"
+        android:padding="10dp"
+        />
+
+    <com.czc.max.taglayout.TagLayout
+        android:id="@+id/tagLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:gravity="center_horizontal"
+        android:padding="10dp"
         />
 
 
-    <Button
-        android:id="@+id/centerHorizontalBt"
-        android:layout_width="0dp"
+    <com.czc.max.taglayout.TagLayout
+        android:id="@+id/tagLayout3"
+        app:gravity="right"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        style="?android:attr/buttonBarButtonStyle"
-        android:text="@string/gravity_center_horizontal"
+        android:background="#ff8899"
+        android:padding="10dp"
         />
-
-    <Button
-        android:id="@+id/rightBt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        style="?android:attr/buttonBarButtonStyle"
-        android:text="@string/gravity_right"
-        />
-
   </LinearLayout>
 
-  <com.czc.max.taglayout.TagLayout
-      android:id="@+id/tagLayout1"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@color/colorAccent"
-      android:padding="10dp"
-      />
 
-  <com.czc.max.taglayout.TagLayout
-      android:id="@+id/tagLayout2"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@color/colorPrimary"
-      android:padding="10dp"
-      />
-
-</LinearLayout>
+</ScrollView>
