@@ -158,21 +158,25 @@ public class TagLayout extends ViewGroup {
     int count = getChildCount();
     int paddingLeft = getPaddingLeft();
     int paddingRight = getPaddingRight();
-    int leftPos = paddingLeft, topPos = getPaddingTop();
+    int paddingTop = getPaddingTop();
+    int paddingBottom = getPaddingBottom();
+    int leftPos = 0, topPos = 0;
     int height = 0;
     for (int i = 0; i < count; i++) {
       View view = getChildAt(i);
+      measureChild(view, widthMeasureSpec, heightMeasureSpec);
       int childWidth = view.getMeasuredWidth();
       int childHeight = view.getMeasuredHeight();
-      if (childWidth > getMeasuredWidth() - leftPos - paddingRight) {
-        height += childHeight + lineSpacing;
-        leftPos = paddingLeft + childWidth + tagSpacing;
+      if (childWidth > getMeasuredWidth() - paddingLeft - paddingRight - leftPos) {
         topPos += childHeight + lineSpacing;
+        height = topPos + childHeight + paddingTop + paddingBottom;
+        leftPos = childWidth + tagSpacing;
       } else {
-        height = topPos + childHeight + getPaddingBottom();
+        height = topPos + childHeight + paddingTop + paddingBottom;
         leftPos += childWidth + tagSpacing;
       }
-      measureChild(view, widthMeasureSpec, heightMeasureSpec);
+
+
     }
     setMeasuredDimension(MeasureSpec.getSize(widthMeasureSpec),
         resolveSize(height, heightMeasureSpec));
